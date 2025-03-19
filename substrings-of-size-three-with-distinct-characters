@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int countGoodSubstrings(string s) {
+        int c=0;
+        string t=s.substr(0,3);
+        //if(t[0]!=t[1] && t[1]!=t[2] && t[0]!=t[2])c++;
+        for(int i=3;i<=s.size();i++){
+            if(t[0]!=t[1] && t[1]!=t[2] && t[0]!=t[2])c++;
+            t.erase(t.begin()+0);
+            t.push_back(s[i]);
+        }
+        return c;
+    }
+};
